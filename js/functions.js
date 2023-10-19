@@ -1,12 +1,17 @@
-function checkLenght(first_str,maxlenght){
-  return first_str.length <= maxlenght;
+function checkLenght(firstStr,maxLenght){
+  return firstStr.length <= maxLenght;
 }
 
 checkLenght('zappp',5);
 
 function isPalindrom(palindrom){
-  palindrom = palindrom.replace(/\s/g, "");
-  return palindrom.split("").reverse().join("") == palindrom;
+  const string = palindrom.replaceAll(' ','').toLoverCase();
+  for(let i = 0; i < string.length / 2; i++){
+    if(string.at(i) !== string.at(-i -1)){
+      return false;
+    }
+  }
+  return true;
 }
 
 isPalindrom('лёша на полке клопа нашёл');
